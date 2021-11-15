@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1">
+<meta name="renderer" content="webkit">
+
+<title>关于一次opencv3.3+Linux（Ubuntu17.04）的编译记录 | BLOG | HDSKY</title>
+
+<meta name="format-detection" content="telephone=no"/>
+
+  <meta name="description" content="最近将开发平台逐步转移到Linux上来，会有不少坑来踩，另外发现网上搜索到的内容多数是旧版本的安装过程，不太适宜现在的安装过程。">
+
+
+
+  <meta name="keywords" content="hdsky,tag.name,tag.name,tag.name">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="applicable-device"content="pc,mobile">
+
+
+
+  <link href="/dist/iris-20b518ec25.css" rel="stylesheet">
+
+<!--instant.page-->
+<script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js" type="module" defer></script>
+
+<!--tiny-cache.js-->
+<script>var TinyCache=function(){"use strict";var o=window.localStorage;var r=document;function l(n){return new Error("Failed to load "+n.name+": "+n.url)}function i(n){return new Error("No such item or item is staled: "+n.name)}function f(n,t){var e=r.createElement("script");e.id=n.name,e.text=t,e.defer=!0,r.getElementsByTagName("head")[0].appendChild(e)}function m(n,t){var e=r.createElement("script");e.id=n.name,e.src=n.url,e.onload=function(){t(null)},e.onerror=function(){t(l(n))},r.getElementsByTagName("body")[0].appendChild(e)}function e(n,t,e){var r=function(n){var t,e=null;try{var r=o.getItem(n);r&&(e=JSON.parse(r))&&("string"!=typeof(t=e).name||"string"!=typeof t.url||"string"!=typeof t.content)&&(e=null)}catch(n){}return e}(""+n+t.name);r?r.url!==t.url||r.expire&&r.expire<(new Date).getTime()?e(i(t)):e(null,r.content):e(i(t))}function s(n,t,e){!function(n,t){try{o.setItem(n,JSON.stringify(t))}catch(n){}}(""+n+t.name,{content:e,expire:t.maxAge?(new Date).getTime()+1e3*t.maxAge:null,name:t.name,url:t.url})}return function(){function n(n){this.config={prefix:"TC:",timeout:6e3},function(n,t){for(var e in t)t.hasOwnProperty(e)&&(n[e]=t[e])}(this.config,n)}var t=n.prototype;return t.load=function(n,t){var e,r,o,i,u=this;if(!t)return new Promise(function(t,e){u.load(n,function(n){n?e(n):t()})});e=n.map(function(t){return function(n){u.loadScript(t,n)}}),r=t,o=[],i=e.length,e.forEach(function(n,e){n(function(n,t){o[e]=t,n&&r&&(r(n),r=null),0==--i&&r&&r(null,o)})})},t.remove=function(n){!function(n){try{localStorage.removeItem(n)}catch(n){}}(""+this.config.prefix+n.name)},t.loadScript=function(u,a){var c=this;e(this.config.prefix,u,function(n,t){var e,r,o,i;n?(e=u,r=c.config.timeout,o=function(n,t){t&&!n?(f(u,t),s(c.config.prefix,u,t),a(null)):m(u,a)},(i=new XMLHttpRequest).open("GET",e.url,!0),i.timeout=r,i.onload=function(){200<=i.status&&i.status<300||304===i.status?o(null,i.responseText):o(l(e))},i.ontimeout=i.onerror=function(){o(l(e))},i.send()):t?(f(u,t),a(null)):m(u,a)})},n}()}();</script>
+
+<script>
+(new TinyCache()).load([
+  { url: '/dist/iris-dfae13bc3a.js', name: 'iris' }
+])
+</script>
+
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+
+
+  <link rel="dns-prefetch" href="//hdsky-pw.disqus.com">
+
+
+
+
+  
+
+  
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+  
+  
+    <link rel="icon" type="image/png" href="/favicon-192x192.png">
+  
+  
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+
+
+  
+
+  <meta property="og:title" content="关于一次opencv3.3+Linux（Ubuntu17.04）的编译记录 | BLOG | HDSKY">
+<meta property="og:type" content="blog">
+<meta property="og:url" content="https://hdsky.pw/2017/10/10/2017/10-10-Linux-opencv3-3/">
+<meta property="og:image" content="/favicon-192x192.png">
+
+<meta property="og:description" content="最近将开发平台逐步转移到Linux上来，会有不少坑来踩，另外发现网上搜索到的内容多数是旧版本的安装过程，不太适宜现在的安装过程。">
+<meta property="og:article:tag" content="hdsky,tag.name,tag.name,tag.name">
+<meta property="og:locale" content="zh-Hans">
+
+
+
+  <meta property="article:published_time" content="Tue Oct 10 2017 11:35:08 GMT+0800">
+  <meta property="article:modified_time" content="Mon Nov 15 2021 22:24:25 GMT+0800">
+
+
+<meta name="twitter:card" content="summary">
+
+  
+
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-82254394-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-82254394-3');
+</script>
+
+
+
+  
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://hdsky.pw"
+    },
+    "headline": "关于一次opencv3.3+Linux（Ubuntu17.04）的编译记录",
+    
+    "datePublished": "2017-10-10T03:35:08.000Z",
+    "dateModified": "2021-11-15T14:24:25.826Z",
+    "author": {
+        "@type": "Person",
+        "name": "黑&amp;蛋",
+        "image": {
+            "@type": "ImageObject",
+            "url": "avatar.png"
+        },
+        "description": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "BLOG | HDSKY",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/favicon-192x192.png"
+        }
+    },
+    "keywords": "hdsky,tag.name,tag.name,tag.name",
+    "description": "最近将开发平台逐步转移到Linux上来，会有不少坑来踩，另外发现网上搜索到的内容多数是旧版本的安装过程，不太适宜现在的安装过程。"
+}
+</script>
+
+
+  
+<script>
+if ('serviceWorker' in navigator) {
+  
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      registrations.map(function(registration) {
+        registration.unregister()
+      })
+    })
+  
+}
+</script>
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body data-instant-intensity="viewport">
+    
+
+<header class="header header__no-hero">
+  <div class="header-wrapper">
+    <div class="header__left">
+      
+      <div class="header-logo">
+        <a href="/">BLOG | HDSKY</a>
+      </div>
+      
+    </div>
+    <div class="header__right">
+      
+<nav class="nav">
+  <a id="nav-toggle" class="nav-toggle"><div></div></a>
+  <div class="nav-wrapper">
+    <ul>
+      
+        <li><a class="nav-link " href="/links">Link</a></li>
+      
+        <li><a class="nav-link " href="/archives">Archive</a></li>
+      
+        <li><a class="nav-link " href="/about">About</a></li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+    </div>
+  </div>
+</header>
+
+
+
+    <main class="main">
+      
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      关于一次opencv3.3+Linux（Ubuntu17.04）的编译记录
+    </h1>
+    <section class="post-meta">
+      <time datetime="2017-10-10T03:35:08.000Z">
+  <i class="far fa-calendar" aria-hidden></i>
+  2017-10-10
+</time>
+
+    </section>
+  </header>
+  <aside class="post-aside">
+  
+  <section class="post-toc">
+    <header class="post-toc-title">
+      Contents
+    </header>
+    <ol class="post-toc-inst"><li class="post-toc-inst-item post-toc-inst-level-2"><a class="post-toc-inst-link" href="#%E5%AE%89%E8%A3%85%E7%8E%AF%E5%A2%83"><span class="post-toc-inst-number">1.</span> <span class="post-toc-inst-text">安装环境</span></a></li><li class="post-toc-inst-item post-toc-inst-level-2"><a class="post-toc-inst-link" href="#%E4%B8%8B%E8%BD%BD%E5%8F%8A%E5%AE%89%E8%A3%85"><span class="post-toc-inst-number">2.</span> <span class="post-toc-inst-text">下载及安装</span></a></li><li class="post-toc-inst-item post-toc-inst-level-2"><a class="post-toc-inst-link" href="#%E7%BC%96%E8%AF%91"><span class="post-toc-inst-number">3.</span> <span class="post-toc-inst-text">编译</span></a></li><li class="post-toc-inst-item post-toc-inst-level-2"><a class="post-toc-inst-link" href="#%E6%B5%8B%E8%AF%95"><span class="post-toc-inst-number">4.</span> <span class="post-toc-inst-text">测试</span></a><ol class="post-toc-inst-child"><li class="post-toc-inst-item post-toc-inst-level-3"><a class="post-toc-inst-link" href="#%E6%B5%8B%E8%AF%95C"><span class="post-toc-inst-number">4.1.</span> <span class="post-toc-inst-text">测试C++</span></a></li><li class="post-toc-inst-item post-toc-inst-level-3"><a class="post-toc-inst-link" href="#%E6%B5%8B%E8%AF%95OpenCV-for-Python3"><span class="post-toc-inst-number">4.2.</span> <span class="post-toc-inst-text">测试OpenCV for Python3</span></a></li></ol></li><li class="post-toc-inst-item post-toc-inst-level-2"><a class="post-toc-inst-link" href="#%E6%88%91%E8%B8%A9%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E5%9D%91"><span class="post-toc-inst-number">5.</span> <span class="post-toc-inst-text">我踩到的一些坑</span></a></li></ol>
+  </section>
+
+
+</aside>
+
+  <section class="post-content">
+    <p>最近将开发平台逐步转移到Linux上来，会有不少坑来踩，另外发现网上搜索到的内容多数是旧版本的安装过程，不太适宜现在的安装过程。<span id="more"></span></p>
+<h2 id="安装环境"><a href="#安装环境" class="headerlink" title="安装环境"></a>安装环境</h2><p>我的开发平台选择的是Ubuntu17.04，因为已经集成了python3，python3就不用装了。这里主要是安装编译环境。</p>
+<p><code>sudo apt install build-essential pkg-config cmake</code></p>
+<h2 id="下载及安装"><a href="#下载及安装" class="headerlink" title="下载及安装"></a>下载及安装</h2><p>我在这里使用的是Git的方式获取源码进行编译，你要先确认你的设备上已经安装了Git，最好还掌握一些科学的知识。</p>
+<p><code>sudo apt install git</code></p>
+<p>然后我们来下载需要的opencv源码，其中opencv_contrib是opencv额外的组件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/opencv/opencv.git</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/opencv/opencv_contrib.git</span><br></pre></td></tr></table></figure>
+<p>然后分别进入两个文件进行版本tag的切换，因为opencv使用了Git的tag标记了版本，若要对opencv进行编译，需要确认opencv和opencv_contrib的版本一致。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> opencv </span><br><span class="line">git checkout -b <span class="built_in">test</span> 3.3.0</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> opencv_contrib</span><br><span class="line">git checkout -b <span class="built_in">test</span> 3.3.0</span><br></pre></td></tr></table></figure>
+<h2 id="编译"><a href="#编译" class="headerlink" title="编译"></a>编译</h2><p>使用cmake-gui是一种非常友好的方式，我们首先要建立一个文件夹来保存编译好的文件，先进入opencv目录，建立一个build文件夹。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir build</span><br></pre></td></tr></table></figure>
+<p>然后使用命令<code>cmake-gui</code>召唤cmake-gui<br>然后在 Where is the source code 中添加 opencv 目录的路径，在 where to build the binaries 中添加 build 目录的路径。</p>
+<p>然后点击下面的 Configure，选择 Unix Makefiles，然后选择 default …。点击 OK，从而处理 opencv 目录下的 CMakeLists.txt，并在 build 目录下生成 CMakeCache.txt 及 Makefile 等相关文件。</p>
+<p>之后开始修改配置文件。<br>修改OPENCV_EXTRA_MODULES_PATH 设为 opencv_contrib 中的 modules 目录的路径（比如，/home/hdsky/opencv_contrib/modules 请按实际情况填写）</p>
+<p>然后点击 Configure，应用刚才的修改并更新至 build 目录下的 CMakeCache.txt 中。然后点击 Generate，更新 Makefile。</p>
+<p>然后回到build文件夹中，使用命令<code>make -j4</code>这里的4是指线程的意思，就是编译使用四个线程，最好根据自己CPU的情况进行填写。</p>
+<p>编译完成后执行下面的命令，将可执行文件安装在指定的目录里</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo make install</span><br><span class="line">sudo ldconfig</span><br></pre></td></tr></table></figure>
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><h3 id="测试C"><a href="#测试C" class="headerlink" title="测试C++"></a>测试C++</h3><p>新建一个 test.cc</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;opencv2/opencv.hpp&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> cv;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    Mat img;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后使用下面的命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">export</span> PKG_CONFIG_PATH=/usr/<span class="built_in">local</span>/lib/pkgconfig</span><br><span class="line"><span class="comment"># 那个 ` 是 esc 键下面的字符。</span></span><br><span class="line">g++ test.cc `pkg-config --cflags --libs opencv`</span><br><span class="line"><span class="comment"># 若无错误产生，则表示成功安装；否则安装失败。</span></span><br><span class="line">./a.out</span><br></pre></td></tr></table></figure>
+<h3 id="测试OpenCV-for-Python3"><a href="#测试OpenCV-for-Python3" class="headerlink" title="测试OpenCV for Python3"></a>测试OpenCV for Python3</h3><p>新建一个test.py</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> cv2</span><br></pre></td></tr></table></figure>
+<p>然后使用<code>python3 test.py</code><br>如果没有产生错误，则说明安装成功；否则安装失败。</p>
+<h2 id="我踩到的一些坑"><a href="#我踩到的一些坑" class="headerlink" title="我踩到的一些坑"></a>我踩到的一些坑</h2><p>0.编译的时候cmake需要下载一些组件，需要掌握科学的知识。</p>
+<p>1.在编译的时候先是遇到了QT的错误，在<code>make -j4</code>的时候可以看到error log的里面又出现大量的QT错误，这时候可以使用<code>sudo apt install qt-sdk</code>来安装QT的一系列组件。</p>
+<p>2.[modules/xfeatures2d/CMakeFiles/opencv_xfeatures2d.dir/all] Error 2<br>遇到这个错误或者类似的出现在opencv_contrib模块中的一些错误，很有可能是opencv_contrib的版本和opencv版本的不一致造成的。因为opencv_contrib这个模块带有很多实验性的功能，一般开发进度是早于opencv的版本，这时候需要使用Git 的tag版本标记切换本地分支的方式回到官方标记的适用于某一版本的opencv_contrib（因为Git不太熟悉，这种说法可能有所错误），总之需要检查opencv_contrib的版本要和opencv一致。</p>
+<hr>
+<p>参考资料</p>
+<p>[Jason’s Blog Ubuntu 下安装 OpenCV3](<a target="_blank" rel="noopener" href="http://cuckootan.me/2016/10/01/Linux/Ubuntu">http://cuckootan.me/2016/10/01/Linux/Ubuntu</a> 下安装 OpenCV3/)</p>
+<p><a target="_blank" rel="noopener" href="https://github.com/opencv/opencv_contrib">opencv_contrib</a></p>
+
+  </section>
+  <footer class="post-meta">
+  
+<section class="categories">
+  
+    <a href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/">
+      <i class="fas fa-folder"></i>
+      图像识别的学习之路
+    </a>
+  
+    <a href="/categories/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB%E7%9A%84%E5%AD%A6%E4%B9%A0%E4%B9%8B%E8%B7%AF/opencv/">
+      <i class="fas fa-folder"></i>
+      opencv
+    </a>
+  
+</section>
+
+
+  
+<section class="tags">
+  
+    <a href="/tags/%E6%8A%80%E6%9C%AF/">
+      <i class="fas fa-tag" aria-hidden></i>
+      技术
+    </a>
+  
+    <a href="/tags/opencv/">
+      <i class="fas fa-tag" aria-hidden></i>
+      opencv
+    </a>
+  
+    <a href="/tags/%E5%9B%BE%E5%83%8F%E8%AF%86%E5%88%AB/">
+      <i class="fas fa-tag" aria-hidden></i>
+      图像识别
+    </a>
+  
+</section>
+
+
+</footer>
+
+  <div class="post-end" data-text="End"></div>
+</article>
+
+  
+<section>
+  
+<div id="disqus_thread"></div>
+  
+    <script>
+      (function(d){
+        window.DISQUS = null;
+        var css = d.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "https://cdn.jsdelivr.net/npm/disqusjs@1.2.3/dist/disqusjs.css";
+        d.head.appendChild(css);
+
+        var js = d.createElement("script");
+        js.async = true;
+        js.src = "https://cdn.jsdelivr.net/npm/disqusjs@1.2.3/dist/disqus.js";
+        js.onload = function() {
+          new DisqusJS({
+            shortname: 'hdsky-pw',
+            siteName: 'BLOG | HDSKY',
+            identifier: '2017/10-10-Linux-opencv3-3',
+            url: 'https://hdsky.pw/2017/10/10/2017/10-10-Linux-opencv3-3/',
+            title: '关于一次opencv3.3+Linux（Ubuntu17.04）的编译记录',
+            api: '',
+            apikey: 'nvPDNH7YoE53bGKClf2CTyHqz9pYcnEsDoMFdpBEdarIrYJNfsdSDrAioHU5292n',
+            admin: 'disqus_trck5pCCAM',
+            adminLabel: ''
+          });
+        }
+        d.head.appendChild(js);
+      })(document);
+    </script>
+  
+
+  
+</section>
+
+
+
+ 
+    </main>
+    <footer class="footer">
+  <div class="footer-wrapper">
+    <p class="copyright">
+      &copy; 
+      2016 -
+      2021
+      黑&amp;蛋
+    </p>
+    <p class="theme">
+      Hexo Theme <a href="https://github.com/giuem/hexo-theme-iris" target="_blank" rel="noopener noreferrer">Iris</a> with <i class="fas fa-heart"></i>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>

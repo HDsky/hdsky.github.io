@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=1">
+<meta name="renderer" content="webkit">
+
+<title>Autofs服务介绍及简单配置 | BLOG | HDSKY</title>
+
+<meta name="format-detection" content="telephone=no"/>
+
+  <meta name="description" content="Autofs是一项按需挂载目录的服务，通过使用Autofs，当你访问NFS/Samba 服务的时候，自动挂载到你指定好的目录，在一段时间后（默认300秒）会自动断开，相较于直接将mount命令写入到开机启动或者/etc/fstab中的做法，Autofs更加智能，同时也能够节约网络的带宽以及减少对服务器的资源占用。">
+
+
+
+  <meta name="keywords" content="hdsky,tag.name">
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="applicable-device"content="pc,mobile">
+
+
+
+  <link href="/dist/iris-20b518ec25.css" rel="stylesheet">
+
+<!--instant.page-->
+<script src="https://cdn.jsdelivr.net/npm/instant.page@3.0.0/instantpage.min.js" type="module" defer></script>
+
+<!--tiny-cache.js-->
+<script>var TinyCache=function(){"use strict";var o=window.localStorage;var r=document;function l(n){return new Error("Failed to load "+n.name+": "+n.url)}function i(n){return new Error("No such item or item is staled: "+n.name)}function f(n,t){var e=r.createElement("script");e.id=n.name,e.text=t,e.defer=!0,r.getElementsByTagName("head")[0].appendChild(e)}function m(n,t){var e=r.createElement("script");e.id=n.name,e.src=n.url,e.onload=function(){t(null)},e.onerror=function(){t(l(n))},r.getElementsByTagName("body")[0].appendChild(e)}function e(n,t,e){var r=function(n){var t,e=null;try{var r=o.getItem(n);r&&(e=JSON.parse(r))&&("string"!=typeof(t=e).name||"string"!=typeof t.url||"string"!=typeof t.content)&&(e=null)}catch(n){}return e}(""+n+t.name);r?r.url!==t.url||r.expire&&r.expire<(new Date).getTime()?e(i(t)):e(null,r.content):e(i(t))}function s(n,t,e){!function(n,t){try{o.setItem(n,JSON.stringify(t))}catch(n){}}(""+n+t.name,{content:e,expire:t.maxAge?(new Date).getTime()+1e3*t.maxAge:null,name:t.name,url:t.url})}return function(){function n(n){this.config={prefix:"TC:",timeout:6e3},function(n,t){for(var e in t)t.hasOwnProperty(e)&&(n[e]=t[e])}(this.config,n)}var t=n.prototype;return t.load=function(n,t){var e,r,o,i,u=this;if(!t)return new Promise(function(t,e){u.load(n,function(n){n?e(n):t()})});e=n.map(function(t){return function(n){u.loadScript(t,n)}}),r=t,o=[],i=e.length,e.forEach(function(n,e){n(function(n,t){o[e]=t,n&&r&&(r(n),r=null),0==--i&&r&&r(null,o)})})},t.remove=function(n){!function(n){try{localStorage.removeItem(n)}catch(n){}}(""+this.config.prefix+n.name)},t.loadScript=function(u,a){var c=this;e(this.config.prefix,u,function(n,t){var e,r,o,i;n?(e=u,r=c.config.timeout,o=function(n,t){t&&!n?(f(u,t),s(c.config.prefix,u,t),a(null)):m(u,a)},(i=new XMLHttpRequest).open("GET",e.url,!0),i.timeout=r,i.onload=function(){200<=i.status&&i.status<300||304===i.status?o(null,i.responseText):o(l(e))},i.ontimeout=i.onerror=function(){o(l(e))},i.send()):t?(f(u,t),a(null)):m(u,a)})},n}()}();</script>
+
+<script>
+(new TinyCache()).load([
+  { url: '/dist/iris-dfae13bc3a.js', name: 'iris' }
+])
+</script>
+
+  <meta http-equiv="x-dns-prefetch-control" content="on">
+
+
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+
+
+
+  <link rel="dns-prefetch" href="//hdsky-pw.disqus.com">
+
+
+
+
+  
+
+  
+    <link rel="shortcut icon" type="image/ico" href="/favicon.ico">
+  
+  
+    <link rel="icon" type="image/png" href="/favicon-192x192.png">
+  
+  
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+
+
+  
+
+  <meta property="og:title" content="Autofs服务介绍及简单配置 | BLOG | HDSKY">
+<meta property="og:type" content="blog">
+<meta property="og:url" content="https://hdsky.pw/2019/06/07/2019/06-07-autofs/">
+<meta property="og:image" content="/favicon-192x192.png">
+
+<meta property="og:description" content="Autofs是一项按需挂载目录的服务，通过使用Autofs，当你访问NFS/Samba 服务的时候，自动挂载到你指定好的目录，在一段时间后（默认300秒）会自动断开，相较于直接将mount命令写入到开机启动或者/etc/fstab中的做法，Autofs更加智能，同时也能够节约网络的带宽以及减少对服务器的资源占用。">
+<meta property="og:article:tag" content="hdsky,tag.name">
+<meta property="og:locale" content="zh-Hans">
+
+
+
+  <meta property="article:published_time" content="Fri Jun 07 2019 22:07:56 GMT+0800">
+  <meta property="article:modified_time" content="Mon Nov 15 2021 22:24:25 GMT+0800">
+
+
+<meta name="twitter:card" content="summary">
+
+  
+
+
+  
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-82254394-3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UA-82254394-3');
+</script>
+
+
+
+  
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "https://hdsky.pw"
+    },
+    "headline": "Autofs服务介绍及简单配置",
+    
+    "datePublished": "2019-06-07T14:07:56.000Z",
+    "dateModified": "2021-11-15T14:24:25.826Z",
+    "author": {
+        "@type": "Person",
+        "name": "黑&amp;蛋",
+        "image": {
+            "@type": "ImageObject",
+            "url": "avatar.png"
+        },
+        "description": ""
+    },
+    "publisher": {
+        "@type": "Organization",
+        "name": "BLOG | HDSKY",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "/favicon-192x192.png"
+        }
+    },
+    "keywords": "hdsky,tag.name",
+    "description": "Autofs是一项按需挂载目录的服务，通过使用Autofs，当你访问NFS/Samba 服务的时候，自动挂载到你指定好的目录，在一段时间后（默认300秒）会自动断开，相较于直接将mount命令写入到开机启动或者/etc/fstab中的做法，Autofs更加智能，同时也能够节约网络的带宽以及减少对服务器的资源占用。"
+}
+</script>
+
+
+  
+<script>
+if ('serviceWorker' in navigator) {
+  
+    navigator.serviceWorker.getRegistrations().then(function(registrations) {
+      registrations.map(function(registration) {
+        registration.unregister()
+      })
+    })
+  
+}
+</script>
+
+
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+  <body data-instant-intensity="viewport">
+    
+
+<header class="header header__no-hero">
+  <div class="header-wrapper">
+    <div class="header__left">
+      
+      <div class="header-logo">
+        <a href="/">BLOG | HDSKY</a>
+      </div>
+      
+    </div>
+    <div class="header__right">
+      
+<nav class="nav">
+  <a id="nav-toggle" class="nav-toggle"><div></div></a>
+  <div class="nav-wrapper">
+    <ul>
+      
+        <li><a class="nav-link " href="/links">Link</a></li>
+      
+        <li><a class="nav-link " href="/archives">Archive</a></li>
+      
+        <li><a class="nav-link " href="/about">About</a></li>
+      
+    </ul>
+  </div>
+</nav>
+
+
+    </div>
+  </div>
+</header>
+
+
+
+    <main class="main">
+      
+  <article class="post">
+  <header class="post-header">
+    <h1 class="post-title">
+      Autofs服务介绍及简单配置
+    </h1>
+    <section class="post-meta">
+      <time datetime="2019-06-07T14:07:56.000Z">
+  <i class="far fa-calendar" aria-hidden></i>
+  2019-06-07
+</time>
+
+    </section>
+  </header>
+  <aside class="post-aside">
+  
+  <section class="post-toc">
+    <header class="post-toc-title">
+      Contents
+    </header>
+    <ol class="post-toc-inst"><li class="post-toc-inst-item post-toc-inst-level-2"><a class="post-toc-inst-link" href="#Autofs%E6%9C%8D%E5%8A%A1%E5%AE%89%E8%A3%85"><span class="post-toc-inst-number">1.</span> <span class="post-toc-inst-text">Autofs服务安装</span></a></li><li class="post-toc-inst-item post-toc-inst-level-2"><a class="post-toc-inst-link" href="#Autofs%E9%85%8D%E7%BD%AE"><span class="post-toc-inst-number">2.</span> <span class="post-toc-inst-text">Autofs配置</span></a></li></ol>
+  </section>
+
+
+</aside>
+
+  <section class="post-content">
+    <p>Autofs是一项按需挂载目录的服务，通过使用Autofs，当你访问NFS/Samba 服务的时候，自动挂载到你指定好的目录，在一段时间后（默认300秒）会自动断开，相较于直接将mount命令写入到开机启动或者<code>/etc/fstab</code>中的做法，Autofs更加智能，同时也能够节约网络的带宽以及减少对服务器的资源占用。<span id="more"></span></p>
+<blockquote>
+<p>autofs is a program for automatically mounting directories on an as-needed basis. Auto-mounts are mounted only as they are accessed, and are unmounted after a period of inactivity. Because of this, automounting NFS/Samba shares conserves bandwidth and offers better overall performance compared to static mounts via fstab.</p>
+</blockquote>
+<h2 id="Autofs服务安装"><a href="#Autofs服务安装" class="headerlink" title="Autofs服务安装"></a>Autofs服务安装</h2><p>Centos </p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install autofs.x86_64</span><br></pre></td></tr></table></figure>
+
+<p>Ubuntu</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt install autofs</span><br></pre></td></tr></table></figure>
+
+<h2 id="Autofs配置"><a href="#Autofs配置" class="headerlink" title="Autofs配置"></a>Autofs配置</h2><p>下面以挂载NFS客户端为例，简单介绍Autofs的配置工作，NFS服务端的搭建不在本文描述范围内，在使用Autofs客户端前首先应该确保服务端没有问题。</p>
+<p>在<code>/etc/auto.master</code>文件中加入一行</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/mnt/nfs /etc/nfs.mount</span><br></pre></td></tr></table></figure>
+
+<p>这一句的意思是目录挂载在<code>/mnt/nfs</code>，对应的配置文件在<code>/etc/nfs.mount</code>，这个子配置文件需要用户自行定义，可以自己起一个方便记的名字，文件名字没有严格要求。</p>
+<p>然后我们创建一个子配置文件。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/nfs.mount</span><br></pre></td></tr></table></figure>
+<p>添加如下配置在子配置文件中,<code>-fstype</code>是挂载的类型：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nfs -fstype=nfs,rw 172.168.10.128:/share</span><br></pre></td></tr></table></figure>
+
+<p>重启autofs服务:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo service autofs restart</span><br></pre></td></tr></table></figure>
+<p>然后进入到<code>/mnt/nfs</code>目录中，即可看到已经挂载上。</p>
+<p>这里要额外再提一点，如果想直接挂载在根目录即<code>/</code>目录下的时候，<code>/etc/auto.master</code>中的配置信息应为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/-      /etc/nfs.mount</span><br></pre></td></tr></table></figure>
+
+<p>然后<code>/etc/nfs.mount</code>中的配置信息为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/u   -fstype=nfs,rw 172.168.10.128:/share</span><br></pre></td></tr></table></figure>
+
+  </section>
+  <footer class="post-meta">
+  
+
+  
+<section class="tags">
+  
+    <a href="/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/">
+      <i class="fas fa-tag" aria-hidden></i>
+      技术笔记
+    </a>
+  
+</section>
+
+
+</footer>
+
+  <div class="post-end" data-text="End"></div>
+</article>
+
+  
+<section>
+  
+<div id="disqus_thread"></div>
+  
+    <script>
+      (function(d){
+        window.DISQUS = null;
+        var css = d.createElement("link");
+        css.rel = "stylesheet";
+        css.href = "https://cdn.jsdelivr.net/npm/disqusjs@1.2.3/dist/disqusjs.css";
+        d.head.appendChild(css);
+
+        var js = d.createElement("script");
+        js.async = true;
+        js.src = "https://cdn.jsdelivr.net/npm/disqusjs@1.2.3/dist/disqus.js";
+        js.onload = function() {
+          new DisqusJS({
+            shortname: 'hdsky-pw',
+            siteName: 'BLOG | HDSKY',
+            identifier: '2019/06-07-autofs',
+            url: 'https://hdsky.pw/2019/06/07/2019/06-07-autofs/',
+            title: 'Autofs服务介绍及简单配置',
+            api: '',
+            apikey: 'nvPDNH7YoE53bGKClf2CTyHqz9pYcnEsDoMFdpBEdarIrYJNfsdSDrAioHU5292n',
+            admin: 'disqus_trck5pCCAM',
+            adminLabel: ''
+          });
+        }
+        d.head.appendChild(js);
+      })(document);
+    </script>
+  
+
+  
+</section>
+
+
+
+ 
+    </main>
+    <footer class="footer">
+  <div class="footer-wrapper">
+    <p class="copyright">
+      &copy; 
+      2016 -
+      2021
+      黑&amp;蛋
+    </p>
+    <p class="theme">
+      Hexo Theme <a href="https://github.com/giuem/hexo-theme-iris" target="_blank" rel="noopener noreferrer">Iris</a> with <i class="fas fa-heart"></i>
+    </p>
+  </div>
+</footer>
+
+  </body>
+</html>
