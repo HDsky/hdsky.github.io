@@ -29,6 +29,15 @@
   </url>
   
   <url>
+    <loc>https://hdsky.pw/2016-07-28-the-probleam-what-in-build-your-wordpress-loading.html</loc>
+    
+    <lastmod>2022-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hdsky.pw/2016-07-26-College-Entrance-Examination.html</loc>
     
     <lastmod>2022-06-27</lastmod>
@@ -39,15 +48,6 @@
   
   <url>
     <loc>https://hdsky.pw/2016-07-28-wordpress-upfile-meet-htttp-mistake.html</loc>
-    
-    <lastmod>2022-06-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/2016-07-28-the-probleam-what-in-build-your-wordpress-loading.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -110,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2020-03-03-ssmtp.html</loc>
+    <loc>https://hdsky.pw/2019-06-14-Centos7-xfs-lvm.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -128,7 +128,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2019-06-14-Centos7-xfs-lvm.html</loc>
+    <loc>https://hdsky.pw/2019-08-05-opencv-code.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -146,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2019-08-05-opencv-code.html</loc>
+    <loc>https://hdsky.pw/2020-03-03-ssmtp.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -164,7 +164,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2017-03-03-hexo-upyun.html</loc>
+    <loc>https://hdsky.pw/2017-02-10-mi4a.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -173,7 +173,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2017-02-10-mi4a.html</loc>
+    <loc>https://hdsky.pw/2017-03-03-hexo-upyun.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2017-10-03-tensorflow-notebook.html</loc>
+    <loc>https://hdsky.pw/2017-09-23-python-notebook.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -227,7 +227,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2017-09-23-python-notebook.html</loc>
+    <loc>https://hdsky.pw/2017-10-03-tensorflow-notebook.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -266,14 +266,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/tags/%E9%AB%98%E8%80%83/</loc>
-    <lastmod>2022-06-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/%E4%BD%9C%E6%96%87/</loc>
+    <loc>https://hdsky.pw/tags/%E6%8A%80%E6%9C%AF/</loc>
     <lastmod>2022-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -287,7 +280,14 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/tags/%E6%8A%80%E6%9C%AF/</loc>
+    <loc>https://hdsky.pw/tags/%E9%AB%98%E8%80%83/</loc>
+    <lastmod>2022-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/tags/%E4%BD%9C%E6%96%87/</loc>
     <lastmod>2022-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -322,14 +322,14 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/</loc>
+    <loc>https://hdsky.pw/tags/%E6%98%A5%E8%8A%82/</loc>
     <lastmod>2022-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://hdsky.pw/tags/%E6%98%A5%E8%8A%82/</loc>
+    <loc>https://hdsky.pw/tags/%E5%B0%8F%E7%B1%B3mi/</loc>
     <lastmod>2022-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -350,7 +350,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/tags/Tensorflow/</loc>
+    <loc>https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/</loc>
     <lastmod>2022-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -364,14 +364,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/tags/%E5%B0%8F%E7%B1%B3mi/</loc>
-    <lastmod>2022-06-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/Anaconda/</loc>
+    <loc>https://hdsky.pw/tags/Tensorflow/</loc>
     <lastmod>2022-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -379,6 +372,13 @@
   
   <url>
     <loc>https://hdsky.pw/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2022-06-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/tags/Anaconda/</loc>
     <lastmod>2022-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -429,14 +429,14 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <loc>https://hdsky.pw/categories/%E8%AF%84%E6%B5%8B/</loc>
     <lastmod>2022-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://hdsky.pw/categories/%E8%AF%84%E6%B5%8B/</loc>
+    <loc>https://hdsky.pw/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2022-06-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
