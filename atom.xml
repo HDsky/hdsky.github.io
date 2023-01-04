@@ -266,11 +266,11 @@
     <category term="随便写的东西" scheme="https://hdsky.pw/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
     
     
+    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
+    
     <category term="上网姿势" scheme="https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91%E5%A7%BF%E5%8A%BF/"/>
     
     <category term="上网" scheme="https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91/"/>
-    
-    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
     
   </entry>
   
@@ -541,9 +541,9 @@
     <category term="Wordpress建站" scheme="https://hdsky.pw/categories/Wordpress%E5%BB%BA%E7%AB%99/"/>
     
     
-    <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
-    
     <category term="Wordpress" scheme="https://hdsky.pw/tags/Wordpress/"/>
+    
+    <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
     
     <category term="建站" scheme="https://hdsky.pw/tags/%E5%BB%BA%E7%AB%99/"/>
     
