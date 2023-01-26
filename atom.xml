@@ -6,7 +6,7 @@
   <link href="https://hdsky.pw/atom.xml" rel="self"/>
   
   <link href="https://hdsky.pw/"/>
-  <updated>2022-06-27T16:08:48.271Z</updated>
+  <updated>2023-01-26T17:26:04.590Z</updated>
   <id>https://hdsky.pw/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>高性能计算( High performance computing )的入门与简介</title>
+    <link href="https://hdsky.pw/2023-01-27-hpc-1.html"/>
+    <id>https://hdsky.pw/2023-01-27-hpc-1.html</id>
+    <published>2023-01-26T16:25:53.000Z</published>
+    <updated>2023-01-26T17:26:04.590Z</updated>
+    
+    <content type="html"><![CDATA[<p>很久没更新了，打算新开一个系列总结一下高性能计算的一些心得<span id="more"></span></p><h2 id="什么是高性能计算-HPC"><a href="#什么是高性能计算-HPC" class="headerlink" title="什么是高性能计算( HPC )"></a>什么是高性能计算( HPC )</h2><p>既然提到了高性能计算，就免不了展开讲讲什么是高性能计算。<br>下面摘录一些大厂对这个名词的理解：</p><p>NVIDIA:</p><blockquote><p>高性能计算 ( HPC ) 是推动科学发展的关键工具之一。 通过跨多个计算节点利用 GPU 助力的并行处理能力，HPC 能够高效、可靠、快速地运行先进的大型应用程序项目。速度提升后可大幅提升吞吐量并降低成本，从而为科学发现铺平道路。</p></blockquote><p>Red Hat:</p><blockquote><p>高性能计算（ HPC ）通常是指在多个服务器上并行处理复杂计算。这些服务器组被称为集群，它们是由成百甚至上千台通过网络连接的计算服务器组成的。在 HPC 集群中，每台计算机通常被称为一个节点。</p></blockquote><p>Intel:</p><blockquote><ul><li>高性能计算 ( HPC ) 是一类可处理计算密集型任务的应用程序和工作负载。</li><li>随着对 HPC 的需求不断增长，在学术和工业环境中，涉及大量数据的 AI 驱动型用例日益增多。</li><li>HPC 集群基于高性能处理器而构建，并搭载高速内存和存储以及其他高级组件。</li></ul></blockquote><p>可以发现各个大厂对于其定义并不相同，但可以看出，都是基于其在高性能计算中所扮演的不同角色而做出的不同定义。</p><p>英伟达在其中主要是贡献了 GPU 部分，而 GPU 作为图形处理单元，在最近几年的实际运用中，越来愈多的参与到了深度学习训练以及推理当中，在此不再展开，本文的重点不在于此。其对于高性能计算的描述就是体现其在高性能计算当中扮演重要的角色。</p><p>而对于 Red Hat 本身来说，高性能计算是用多个服务器所构建成的一套计算系统。考虑到 Red Hat 为其贡献了操作系统，以及各种的基础软件和组建，并提供了一些方便的集群管理工具以及监控系统。Red Hat 更关心高性能计算对于更多服务器的需求以及其中的操作系统的支持。</p><p>Intel 也是从自己的业务角度出发，更多的关注与高性能计算中的计算以及自己所生产的内存以及固态存储等设备。同时希望自己能从NVIDA手中抢夺一些 AI 计算的业务。</p><p>上面提到的这些，只是想说明，每个人或者组织都是从自己的角度出发点，以自身的视角来看待高性能计算是什么。总的来说，高性能计算是一个系统性的技术或者说是解决方案，其中需要软件与硬件的相互协作。</p><p>高性能计算的发展历史也有段时间了，其诞生就是为了解决“计算”这一问题，而在发展中，人们认识到单台设备所能提供的算力是有局限的，所以近现代以来，几乎所有的高性能计算都主要以横向扩展为手段来提高整个集群所能提供的算力支持。提到这个，我们就引出了下面要介绍的内容– –并行计算。</p><hr><p>未完待续……</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;很久没更新了，打算新开一个系列总结一下高性能计算的一些心得</summary>
+    
+    
+    
+    
+    <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
+    
+    <category term="HPC" scheme="https://hdsky.pw/tags/HPC/"/>
+    
+    <category term="Slurm" scheme="https://hdsky.pw/tags/Slurm/"/>
+    
+  </entry>
   
   <entry>
     <title>在Linux中使用Postfix进行SMTP邮件发送服务</title>
@@ -31,9 +54,9 @@
     
     
     
-    <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
-    
     <category term="学习笔记" scheme="https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
     
   </entry>
   
@@ -52,9 +75,9 @@
     
     
     
-    <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
-    
     <category term="学习笔记" scheme="https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
     
   </entry>
   
@@ -266,11 +289,11 @@
     <category term="随便写的东西" scheme="https://hdsky.pw/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
     
     
-    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
-    
     <category term="上网姿势" scheme="https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91%E5%A7%BF%E5%8A%BF/"/>
     
     <category term="上网" scheme="https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91/"/>
+    
+    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
     
   </entry>
   
@@ -493,9 +516,9 @@
     <category term="Wordpress建站" scheme="https://hdsky.pw/categories/Wordpress%E5%BB%BA%E7%AB%99/"/>
     
     
-    <category term="Wordpress" scheme="https://hdsky.pw/tags/Wordpress/"/>
-    
     <category term="技术" scheme="https://hdsky.pw/tags/%E6%8A%80%E6%9C%AF/"/>
+    
+    <category term="Wordpress" scheme="https://hdsky.pw/tags/Wordpress/"/>
     
     <category term="解决方案" scheme="https://hdsky.pw/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
@@ -541,9 +564,9 @@
     <category term="Wordpress建站" scheme="https://hdsky.pw/categories/Wordpress%E5%BB%BA%E7%AB%99/"/>
     
     
-    <category term="Wordpress" scheme="https://hdsky.pw/tags/Wordpress/"/>
-    
     <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
+    
+    <category term="Wordpress" scheme="https://hdsky.pw/tags/Wordpress/"/>
     
     <category term="建站" scheme="https://hdsky.pw/tags/%E5%BB%BA%E7%AB%99/"/>
     
