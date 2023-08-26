@@ -47,15 +47,6 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2016-07-28-the-probleam-what-in-build-your-wordpress-loading.html</loc>
-    
-    <lastmod>2022-06-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://hdsky.pw/2016-07-26-College-Entrance-Examination.html</loc>
     
     <lastmod>2022-06-27</lastmod>
@@ -66,6 +57,15 @@
   
   <url>
     <loc>https://hdsky.pw/2016-07-28-wordpress-upfile-meet-htttp-mistake.html</loc>
+    
+    <lastmod>2022-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/2016-07-28-the-probleam-what-in-build-your-wordpress-loading.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -92,7 +92,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2020-03-18-Postfix.html</loc>
+    <loc>https://hdsky.pw/2018-05-26-word-to-say.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -101,7 +101,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2018-05-26-word-to-say.html</loc>
+    <loc>https://hdsky.pw/2016-12-24-opencv-setup.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -119,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2016-12-24-opencv-setup.html</loc>
+    <loc>https://hdsky.pw/2020-03-18-Postfix.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -146,7 +146,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2019-07-03-latex-install.html</loc>
+    <loc>https://hdsky.pw/2019-06-14-Centos7-xfs-lvm.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -164,16 +164,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2019-06-14-Centos7-xfs-lvm.html</loc>
-    
-    <lastmod>2022-06-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/2017-02-10-mi4a.html</loc>
+    <loc>https://hdsky.pw/2019-07-03-latex-install.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -200,7 +191,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2019-06-07-autofs.html</loc>
+    <loc>https://hdsky.pw/2017-01-02-certificate.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -209,7 +200,16 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2017-01-02-certificate.html</loc>
+    <loc>https://hdsky.pw/2017-02-10-mi4a.html</loc>
+    
+    <lastmod>2022-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/2019-06-07-autofs.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -263,28 +263,7 @@
 
   
   <url>
-    <loc>https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2023-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/Linux/</loc>
-    <lastmod>2023-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hdsky.pw/tags/%E6%98%A5%E8%8A%82/</loc>
-    <lastmod>2023-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/%E5%B0%8F%E7%B1%B3mi/</loc>
     <lastmod>2023-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -333,6 +312,13 @@
   </url>
   
   <url>
+    <loc>https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2023-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://hdsky.pw/tags/opencv/</loc>
     <lastmod>2023-08-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -347,35 +333,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2023-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/Anaconda/</loc>
-    <lastmod>2023-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/OpenCV/</loc>
-    <lastmod>2023-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/HPC/</loc>
-    <lastmod>2023-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/Slurm/</loc>
+    <loc>https://hdsky.pw/tags/Linux/</loc>
     <lastmod>2023-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -396,20 +354,6 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/tags/Chatglm2/</loc>
-    <lastmod>2023-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
-    <lastmod>2023-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hdsky.pw/tags/%E9%AB%98%E8%80%83/</loc>
     <lastmod>2023-08-26</lastmod>
     <changefreq>weekly</changefreq>
@@ -424,7 +368,63 @@
   </url>
   
   <url>
+    <loc>https://hdsky.pw/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/</loc>
+    <lastmod>2023-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/tags/%E5%B0%8F%E7%B1%B3mi/</loc>
+    <lastmod>2023-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://hdsky.pw/tags/ZUCC/</loc>
+    <lastmod>2023-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/tags/HPC/</loc>
+    <lastmod>2023-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/tags/Slurm/</loc>
+    <lastmod>2023-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/tags/Anaconda/</loc>
+    <lastmod>2023-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/tags/Chatglm2/</loc>
+    <lastmod>2023-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2023-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/tags/OpenCV/</loc>
     <lastmod>2023-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -434,13 +434,6 @@
   
   <url>
     <loc>https://hdsky.pw/categories/%E6%96%B0%E6%98%A5%E7%A5%9D%E7%A6%8F/</loc>
-    <lastmod>2023-08-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/categories/%E8%AF%84%E6%B5%8B/</loc>
     <lastmod>2023-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -476,6 +469,13 @@
   
   <url>
     <loc>https://hdsky.pw/categories/Wordpress%E5%BB%BA%E7%AB%99/</loc>
+    <lastmod>2023-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/categories/%E8%AF%84%E6%B5%8B/</loc>
     <lastmod>2023-08-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
