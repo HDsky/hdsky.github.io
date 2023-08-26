@@ -18,8 +18,8 @@
   
   <entry>
     <title>ChatGLM2-6B-int4 模型初步尝试</title>
-    <link href="https://hdsky.pw/chatglm2.html"/>
-    <id>https://hdsky.pw/chatglm2.html</id>
+    <link href="https://hdsky.pw/2023-08-27-chatglm2.html"/>
+    <id>https://hdsky.pw/2023-08-27-chatglm2.html</id>
     <published>2023-08-26T21:11:12.000Z</published>
     <updated>2023-08-26T21:19:12.056Z</updated>
     
@@ -31,9 +31,9 @@
     
     
     
-    <category term="Chatglm2" scheme="https://hdsky.pw/tags/Chatglm2/"/>
-    
     <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
+    
+    <category term="Chatglm2" scheme="https://hdsky.pw/tags/Chatglm2/"/>
     
   </entry>
   
@@ -75,9 +75,9 @@
     
     
     
-    <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
-    
     <category term="学习笔记" scheme="https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
     
   </entry>
   
@@ -96,9 +96,9 @@
     
     
     
-    <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
-    
     <category term="学习笔记" scheme="https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
     
   </entry>
   
@@ -287,9 +287,9 @@
     <category term="学习笔记" scheme="https://hdsky.pw/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
-    
     <category term="学习笔记" scheme="https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
     
   </entry>
   
@@ -310,11 +310,11 @@
     <category term="随便写的东西" scheme="https://hdsky.pw/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
     
     
-    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
+    <category term="上网" scheme="https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91/"/>
     
     <category term="上网姿势" scheme="https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91%E5%A7%BF%E5%8A%BF/"/>
     
-    <category term="上网" scheme="https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91/"/>
+    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
     
   </entry>
   
