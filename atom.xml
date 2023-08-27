@@ -6,7 +6,7 @@
   <link href="https://hdsky.pw/atom.xml" rel="self"/>
   
   <link href="https://hdsky.pw/"/>
-  <updated>2023-08-26T21:23:55.529Z</updated>
+  <updated>2023-08-27T15:15:15.051Z</updated>
   <id>https://hdsky.pw/</id>
   
   <author>
@@ -21,12 +21,12 @@
     <link href="https://hdsky.pw/2023-08-27-chatglm2.html"/>
     <id>https://hdsky.pw/2023-08-27-chatglm2.html</id>
     <published>2023-08-26T21:11:12.000Z</published>
-    <updated>2023-08-26T21:23:55.529Z</updated>
+    <updated>2023-08-27T15:15:15.051Z</updated>
     
-    <content type="html"><![CDATA[<p>是一款国内推出的开源的自然语言模型，通过 <code>chatglm2-6b-int4</code> 模型能够在6G左右的显卡以及CPU下实现调用，比较适合个人电脑部署。</p><span id="more"></span><p>项目地址 <a href="https://github.com/THUDM/ChatGLM2-6B">https://github.com/THUDM/ChatGLM2-6B</a></p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>ChatGLM<strong>2</strong>-6B 是开源中英双语对话模型 <a href="https://github.com/THUDM/ChatGLM-6B">ChatGLM-6B</a> 的第二代版本，在保留了初代模型对话流畅、部署门槛较低等众多优秀特性的基础之上，ChatGLM<strong>2</strong>-6B 引入了如下新特性：</p><ol><li><strong>更强大的性能</strong>：基于 ChatGLM 初代模型的开发经验，我们全面升级了 ChatGLM2-6B 的基座模型。ChatGLM2-6B 使用了 <a href="https://github.com/THUDM/GLM">GLM</a> 的混合目标函数，经过了 1.4T 中英标识符的预训练与人类偏好对齐训练，<a href="#%E8%AF%84%E6%B5%8B%E7%BB%93%E6%9E%9C">评测结果</a>显示，相比于初代模型，ChatGLM2-6B 在 MMLU（+23%）、CEval（+33%）、GSM8K（+571%） 、BBH（+60%）等数据集上的性能取得了大幅度的提升，在同尺寸开源模型中具有较强的竞争力。</li><li><strong>更长的上下文</strong>：基于 <a href="https://github.com/HazyResearch/flash-attention">FlashAttention</a> 技术，我们将基座模型的上下文长度（Context Length）由 ChatGLM-6B 的 2K 扩展到了 32K，并在对话阶段使用 8K 的上下文长度训练。对于更长的上下文，我们发布了 <a href="https://huggingface.co/THUDM/chatglm2-6b-32k">ChatGLM2-6B-32K</a> 模型。<a href="https://github.com/THUDM/LongBench">LongBench</a> 的测评结果表明，在等量级的开源模型中，ChatGLM2-6B-32K 有着较为明显的竞争优势。</li><li><strong>更高效的推理</strong>：基于 <a href="http://arxiv.org/abs/1911.02150">Multi-Query Attention</a> 技术，ChatGLM2-6B 有更高效的推理速度和更低的显存占用：在官方的模型实现下，推理速度相比初代提升了 42%，INT4 量化下，6G 显存支持的对话长度由 1K 提升到了 8K。</li><li><strong>更开放的协议</strong>：ChatGLM2-6B 权重对学术研究<strong>完全开放</strong>，在填写<a href="https://open.bigmodel.cn/mla/form">问卷</a>进行登记后<strong>亦允许免费商业使用</strong>。</li></ol><h2 id="前期准备-（Base-on-Ubuntu）"><a href="#前期准备-（Base-on-Ubuntu）" class="headerlink" title="前期准备 （Base on Ubuntu）"></a>前期准备 （Base on Ubuntu）</h2><ul><li>安装好 CUDA 环境的 Ubuntu</li><li>Git &amp; git-lfs</li><li>Anaconda or Mambaforge (optional)</li></ul><h3 id="安装git-lfs"><a href="#安装git-lfs" class="headerlink" title="安装git-lfs"></a>安装git-lfs</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure><p>参考：<a href="https://github.com/git-lfs/git-lfs/wiki/Installation">https://github.com/git-lfs/git-lfs/wiki/Installation</a></p><h3 id="准备模型文件-optional"><a href="#准备模型文件-optional" class="headerlink" title="准备模型文件 (optional)"></a>准备模型文件 (optional)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://huggingface.co/THUDM/chatglm2-6b-int4</span><br></pre></td></tr></table></figure><h3 id="准备项目文件"><a href="#准备项目文件" class="headerlink" title="准备项目文件"></a>准备项目文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/THUDM/ChatGLM2-6B.git</span><br></pre></td></tr></table></figure><h2 id="Just-do-it"><a href="#Just-do-it" class="headerlink" title="Just do it"></a>Just do it</h2><p>通过上面的准备工作，我们获得了两个文件夹 <code>chatglm2-6b-int4</code> 和 <code>ChatGLM2-6B</code>，分别是存放的项目文件和模型文件。</p><h3 id="创建虚拟环境-optional"><a href="#创建虚拟环境-optional" class="headerlink" title="创建虚拟环境 (optional)"></a>创建虚拟环境 (optional)</h3><p>创建一个虚拟环境，我们将其命名为 chatglm2，进入其中并安装好 python 和 pip</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda create -n chatglm2</span><br><span class="line">conda activate chatglm2</span><br><span class="line">conda install python</span><br></pre></td></tr></table></figure><h3 id="进入到项目文件夹，安装依赖环境"><a href="#进入到项目文件夹，安装依赖环境" class="headerlink" title="进入到项目文件夹，安装依赖环境"></a>进入到项目文件夹，安装依赖环境</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ChatGLM2-6B</span><br><span class="line">pip install -r requirements.txt -i https://mirror.sjtu.edu.cn/pypi/web/simple</span><br></pre></td></tr></table></figure><h3 id="修改-cli-demo-py-中的内容，指定成我们已经下载好的模型文件-optional"><a href="#修改-cli-demo-py-中的内容，指定成我们已经下载好的模型文件-optional" class="headerlink" title="修改 cli_demo.py 中的内容，指定成我们已经下载好的模型文件 (optional)"></a>修改 <code>cli_demo.py</code> 中的内容，指定成我们已经下载好的模型文件 (optional)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model = AutoModel.from_pretrained(&quot;/home/hdsky/chatglm2/chatglm2-6b-int4&quot;, trust_remote_code=True).cuda()</span><br></pre></td></tr></table></figure><h3 id="然后直接执行"><a href="#然后直接执行" class="headerlink" title="然后直接执行"></a>然后直接执行</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python cli_demo.py</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>是一款国内推出的开源的自然语言模型，通过 <code>chatglm2-6b-int4</code> 模型能够在6G左右的显卡以及CPU下实现调用，比较适合个人电脑部署。<span id="more"></span></p><p>项目地址 <a href="https://github.com/THUDM/ChatGLM2-6B">https://github.com/THUDM/ChatGLM2-6B</a></p><h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><p>ChatGLM<strong>2</strong>-6B 是开源中英双语对话模型 <a href="https://github.com/THUDM/ChatGLM-6B">ChatGLM-6B</a> 的第二代版本，在保留了初代模型对话流畅、部署门槛较低等众多优秀特性的基础之上，ChatGLM<strong>2</strong>-6B 引入了如下新特性：</p><ol><li><strong>更强大的性能</strong>：基于 ChatGLM 初代模型的开发经验，我们全面升级了 ChatGLM2-6B 的基座模型。ChatGLM2-6B 使用了 <a href="https://github.com/THUDM/GLM">GLM</a> 的混合目标函数，经过了 1.4T 中英标识符的预训练与人类偏好对齐训练，<a href="#%E8%AF%84%E6%B5%8B%E7%BB%93%E6%9E%9C">评测结果</a>显示，相比于初代模型，ChatGLM2-6B 在 MMLU（+23%）、CEval（+33%）、GSM8K（+571%） 、BBH（+60%）等数据集上的性能取得了大幅度的提升，在同尺寸开源模型中具有较强的竞争力。</li><li><strong>更长的上下文</strong>：基于 <a href="https://github.com/HazyResearch/flash-attention">FlashAttention</a> 技术，我们将基座模型的上下文长度（Context Length）由 ChatGLM-6B 的 2K 扩展到了 32K，并在对话阶段使用 8K 的上下文长度训练。对于更长的上下文，我们发布了 <a href="https://huggingface.co/THUDM/chatglm2-6b-32k">ChatGLM2-6B-32K</a> 模型。<a href="https://github.com/THUDM/LongBench">LongBench</a> 的测评结果表明，在等量级的开源模型中，ChatGLM2-6B-32K 有着较为明显的竞争优势。</li><li><strong>更高效的推理</strong>：基于 <a href="http://arxiv.org/abs/1911.02150">Multi-Query Attention</a> 技术，ChatGLM2-6B 有更高效的推理速度和更低的显存占用：在官方的模型实现下，推理速度相比初代提升了 42%，INT4 量化下，6G 显存支持的对话长度由 1K 提升到了 8K。</li><li><strong>更开放的协议</strong>：ChatGLM2-6B 权重对学术研究<strong>完全开放</strong>，在填写<a href="https://open.bigmodel.cn/mla/form">问卷</a>进行登记后<strong>亦允许免费商业使用</strong>。</li></ol><h2 id="前期准备-（Base-on-Ubuntu）"><a href="#前期准备-（Base-on-Ubuntu）" class="headerlink" title="前期准备 （Base on Ubuntu）"></a>前期准备 （Base on Ubuntu）</h2><ul><li>安装好 CUDA 环境的 Ubuntu</li><li>Git &amp; git-lfs</li><li>Anaconda or Mambaforge (optional)</li></ul><h3 id="安装git-lfs"><a href="#安装git-lfs" class="headerlink" title="安装git-lfs"></a>安装git-lfs</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install git-lfs</span><br><span class="line">git lfs install</span><br></pre></td></tr></table></figure><p>参考：<a href="https://github.com/git-lfs/git-lfs/wiki/Installation">https://github.com/git-lfs/git-lfs/wiki/Installation</a></p><h3 id="准备模型文件-optional"><a href="#准备模型文件-optional" class="headerlink" title="准备模型文件 (optional)"></a>准备模型文件 (optional)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://huggingface.co/THUDM/chatglm2-6b-int4</span><br></pre></td></tr></table></figure><h3 id="准备项目文件"><a href="#准备项目文件" class="headerlink" title="准备项目文件"></a>准备项目文件</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/THUDM/ChatGLM2-6B.git</span><br></pre></td></tr></table></figure><h2 id="Just-do-it"><a href="#Just-do-it" class="headerlink" title="Just do it"></a>Just do it</h2><p>通过上面的准备工作，我们获得了两个文件夹 <code>chatglm2-6b-int4</code> 和 <code>ChatGLM2-6B</code>，分别是存放的项目文件和模型文件。</p><h3 id="创建虚拟环境-optional"><a href="#创建虚拟环境-optional" class="headerlink" title="创建虚拟环境 (optional)"></a>创建虚拟环境 (optional)</h3><p>创建一个虚拟环境，我们将其命名为 chatglm2，进入其中并安装好 python 和 pip</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda create -n chatglm2</span><br><span class="line">conda activate chatglm2</span><br><span class="line">conda install python</span><br></pre></td></tr></table></figure><h3 id="进入到项目文件夹，安装依赖环境"><a href="#进入到项目文件夹，安装依赖环境" class="headerlink" title="进入到项目文件夹，安装依赖环境"></a>进入到项目文件夹，安装依赖环境</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ChatGLM2-6B</span><br><span class="line">pip install -r requirements.txt -i https://mirror.sjtu.edu.cn/pypi/web/simple</span><br></pre></td></tr></table></figure><h3 id="修改-cli-demo-py-中的内容，指定成我们已经下载好的模型文件-optional"><a href="#修改-cli-demo-py-中的内容，指定成我们已经下载好的模型文件-optional" class="headerlink" title="修改 cli_demo.py 中的内容，指定成我们已经下载好的模型文件 (optional)"></a>修改 <code>cli_demo.py</code> 中的内容，指定成我们已经下载好的模型文件 (optional)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">model = AutoModel.from_pretrained(&quot;/home/hdsky/chatglm2/chatglm2-6b-int4&quot;, trust_remote_code=True).cuda()</span><br></pre></td></tr></table></figure><h3 id="然后直接执行"><a href="#然后直接执行" class="headerlink" title="然后直接执行"></a>然后直接执行</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python cli_demo.py</span><br></pre></td></tr></table></figure>]]></content>
     
     
-    <summary type="html">&lt;p&gt;是一款国内推出的开源的自然语言模型，通过 &lt;code&gt;chatglm2-6b-int4&lt;/code&gt; 模型能够在6G左右的显卡以及CPU下实现调用，比较适合个人电脑部署。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;是一款国内推出的开源的自然语言模型，通过 &lt;code&gt;chatglm2-6b-int4&lt;/code&gt; 模型能够在6G左右的显卡以及CPU下实现调用，比较适合个人电脑部署。</summary>
     
     
     
@@ -75,9 +75,9 @@
     
     
     
-    <category term="学习笔记" scheme="https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
+    
+    <category term="学习笔记" scheme="https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -96,9 +96,9 @@
     
     
     
-    <category term="学习笔记" scheme="https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
     <category term="Linux" scheme="https://hdsky.pw/tags/Linux/"/>
+    
+    <category term="学习笔记" scheme="https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
@@ -264,9 +264,9 @@
     <category term="学习笔记" scheme="https://hdsky.pw/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Tensorflow" scheme="https://hdsky.pw/tags/Tensorflow/"/>
-    
     <category term="学习笔记" scheme="https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="Tensorflow" scheme="https://hdsky.pw/tags/Tensorflow/"/>
     
   </entry>
   
@@ -287,9 +287,9 @@
     <category term="学习笔记" scheme="https://hdsky.pw/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
-    
     <category term="学习笔记" scheme="https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
     
   </entry>
   
@@ -310,11 +310,11 @@
     <category term="随便写的东西" scheme="https://hdsky.pw/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
     
     
-    <category term="上网" scheme="https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91/"/>
-    
     <category term="上网姿势" scheme="https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91%E5%A7%BF%E5%8A%BF/"/>
     
     <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
+    
+    <category term="上网" scheme="https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91/"/>
     
   </entry>
   
@@ -537,9 +537,9 @@
     <category term="Wordpress建站" scheme="https://hdsky.pw/categories/Wordpress%E5%BB%BA%E7%AB%99/"/>
     
     
-    <category term="技术" scheme="https://hdsky.pw/tags/%E6%8A%80%E6%9C%AF/"/>
-    
     <category term="Wordpress" scheme="https://hdsky.pw/tags/Wordpress/"/>
+    
+    <category term="技术" scheme="https://hdsky.pw/tags/%E6%8A%80%E6%9C%AF/"/>
     
     <category term="解决方案" scheme="https://hdsky.pw/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
