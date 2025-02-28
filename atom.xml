@@ -6,7 +6,7 @@
   <link href="https://hdsky.pw/atom.xml" rel="self"/>
   
   <link href="https://hdsky.pw/"/>
-  <updated>2023-08-27T15:15:15.051Z</updated>
+  <updated>2025-02-28T10:31:05.692Z</updated>
   <id>https://hdsky.pw/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何卸载Dify</title>
+    <link href="https://hdsky.pw/2025-02-28-dify.html"/>
+    <id>https://hdsky.pw/2025-02-28-dify.html</id>
+    <published>2025-02-28T10:11:22.000Z</published>
+    <updated>2025-02-28T10:31:05.692Z</updated>
+    
+    <content type="html"><![CDATA[<p>Dify (<a href="https://github.com/langgenius/dify">https://github.com/langgenius/dify</a>) 总是有莫名其妙的bug，太难用了，咱们直接一个卸载的进行，翻了下手册没有提到如何将其从服务器中移除，在此就当作记录。<span id="more"></span></p><p>首先进入到安装时的目录，进入到docker文件夹下面，也就是进入到包含 docker-compose.yml 文件夹</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">##停止容器</span></span><br><span class="line">docker-compose down</span><br><span class="line"><span class="comment">##删除无用镜像，警告⚠️会删除系统中所有未在使用的镜像</span></span><br><span class="line"><span class="comment">#docker image prune -a</span></span><br></pre></td></tr></table></figure><p>然后删除下载的dify项目文件,然后就彻底移除了dify。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Dify (&lt;a href=&quot;https://github.com/langgenius/dify&quot;&gt;https://github.com/langgenius/dify&lt;/a&gt;) 总是有莫名其妙的bug，太难用了，咱们直接一个卸载的进行，翻了下手册没有提到如何将其从服务器中移除，在此就当作记录。</summary>
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>ChatGLM2-6B-int4 模型初步尝试</title>
