@@ -313,7 +313,7 @@
     <published>2017-09-23T13:39:25.000Z</published>
     <updated>2022-06-27T16:08:48.268Z</updated>
     
-    <content type="html"><![CDATA[<p>自己写读书笔记，记录下自己的python学习中遇到的一些问题或者一些奇怪的东西。 <span id="more"></span></p><ol><li><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line">age = <span class="built_in">input</span>(<span class="string">&quot;input your age:&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> age &gt;= <span class="number">18</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;adult&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;young&quot;</span>)</span><br></pre></td></tr></table></figure>执行后会报错</li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TypeError: <span class="string">&#x27;&gt;=&#x27;</span> <span class="keyword">not</span> supported between instances of <span class="string">&#x27;str&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;int&#x27;</span></span><br></pre></td></tr></table></figure><p>原因是input()输入的是str类型，需要将其转成int型。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int(input(&quot;input your age:&quot;))</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>自己写读书笔记，记录下自己的python学习中遇到的一些问题或者一些奇怪的东西。 <span id="more"></span></p><ol><li></li></ol><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#! /usr/bin/env python3</span></span><br><span class="line"></span><br><span class="line">age = <span class="built_in">input</span>(<span class="string">&quot;input your age:&quot;</span>)</span><br><span class="line"><span class="keyword">if</span> age &gt;= <span class="number">18</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;adult&quot;</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;young&quot;</span>)</span><br></pre></td></tr></table></figure><p>执行后会报错</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">TypeError: <span class="string">&#x27;&gt;=&#x27;</span> <span class="keyword">not</span> supported between instances of <span class="string">&#x27;str&#x27;</span> <span class="keyword">and</span> <span class="string">&#x27;int&#x27;</span></span><br></pre></td></tr></table></figure><p>原因是input()输入的是str类型，需要将其转成int型。</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int(input(&quot;input your age:&quot;))</span><br></pre></td></tr></table></figure>]]></content>
     
     
     <summary type="html">&lt;p&gt;自己写读书笔记，记录下自己的python学习中遇到的一些问题或者一些奇怪的东西。</summary>
@@ -323,9 +323,9 @@
     <category term="学习笔记" scheme="https://hdsky.pw/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
-    
     <category term="学习笔记" scheme="https://hdsky.pw/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
     
   </entry>
   
@@ -346,11 +346,11 @@
     <category term="随便写的东西" scheme="https://hdsky.pw/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E7%9A%84%E4%B8%9C%E8%A5%BF/"/>
     
     
+    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
+    
     <category term="上网姿势" scheme="https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91%E5%A7%BF%E5%8A%BF/"/>
     
     <category term="上网" scheme="https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91/"/>
-    
-    <category term="随写" scheme="https://hdsky.pw/tags/%E9%9A%8F%E5%86%99/"/>
     
   </entry>
   
@@ -573,9 +573,9 @@
     <category term="Wordpress建站" scheme="https://hdsky.pw/categories/Wordpress%E5%BB%BA%E7%AB%99/"/>
     
     
-    <category term="技术" scheme="https://hdsky.pw/tags/%E6%8A%80%E6%9C%AF/"/>
-    
     <category term="Wordpress" scheme="https://hdsky.pw/tags/Wordpress/"/>
+    
+    <category term="技术" scheme="https://hdsky.pw/tags/%E6%8A%80%E6%9C%AF/"/>
     
     <category term="解决方案" scheme="https://hdsky.pw/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
