@@ -47,7 +47,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2016-07-25-how-to-build-your-wordpress-in-qloud.html</loc>
+    <loc>https://hdsky.pw/2016-07-26-College-Entrance-Examination.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -56,7 +56,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2016-07-26-College-Entrance-Examination.html</loc>
+    <loc>https://hdsky.pw/2016-07-25-how-to-build-your-wordpress-in-qloud.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -74,7 +74,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2016-08-26-zuccnet.html</loc>
+    <loc>https://hdsky.pw/2016-07-28-wordpress-upfile-meet-htttp-mistake.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -92,25 +92,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2016-07-28-wordpress-upfile-meet-htttp-mistake.html</loc>
-    
-    <lastmod>2022-06-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/2016-12-24-opencv-setup.html</loc>
-    
-    <lastmod>2022-06-27</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/2016-12-31-how-to-set-bat-boot.html</loc>
+    <loc>https://hdsky.pw/2016-08-26-zuccnet.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -128,7 +110,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2017-01-27-happychinesenewyear2017.html</loc>
+    <loc>https://hdsky.pw/2017-02-10-mi4a.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -137,7 +119,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2017-02-10-mi4a.html</loc>
+    <loc>https://hdsky.pw/2016-12-24-opencv-setup.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -155,7 +137,16 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2017-08-26-something-should-tell-you.html</loc>
+    <loc>https://hdsky.pw/2017-01-27-happychinesenewyear2017.html</loc>
+    
+    <lastmod>2022-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/2016-12-31-how-to-set-bat-boot.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -182,6 +173,15 @@
   </url>
   
   <url>
+    <loc>https://hdsky.pw/2017-08-26-something-should-tell-you.html</loc>
+    
+    <lastmod>2022-06-27</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://hdsky.pw/2017-10-10-Linux-opencv3-3.html</loc>
     
     <lastmod>2022-06-27</lastmod>
@@ -200,7 +200,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2019-04-27-anaconda-mirrors.html</loc>
+    <loc>https://hdsky.pw/2019-06-07-autofs.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -218,7 +218,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/2019-06-07-autofs.html</loc>
+    <loc>https://hdsky.pw/2019-04-27-anaconda-mirrors.html</loc>
     
     <lastmod>2022-06-27</lastmod>
     
@@ -281,6 +281,20 @@
 
   
   <url>
+    <loc>https://hdsky.pw/tags/%E9%AB%98%E8%80%83/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/tags/%E4%BD%9C%E6%96%87/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://hdsky.pw/tags/Linux/</loc>
     <lastmod>2025-10-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -296,20 +310,6 @@
   
   <url>
     <loc>https://hdsky.pw/tags/%E5%BB%BA%E7%AB%99/</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/%E9%AB%98%E8%80%83/</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/%E4%BD%9C%E6%96%87/</loc>
     <lastmod>2025-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -337,6 +337,20 @@
   </url>
   
   <url>
+    <loc>https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91%E5%A7%BF%E5%8A%BF/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/tags/%E5%B0%8F%E7%B1%B3mi/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://hdsky.pw/tags/opencv/</loc>
     <lastmod>2025-10-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -351,27 +365,6 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91%E5%A7%BF%E5%8A%BF/</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/%E6%98%A5%E8%8A%82/</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/tags/%E5%B0%8F%E7%B1%B3mi/</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hdsky.pw/tags/Upyun/</loc>
     <lastmod>2025-10-19</lastmod>
     <changefreq>weekly</changefreq>
@@ -379,7 +372,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91/</loc>
+    <loc>https://hdsky.pw/tags/%E6%98%A5%E8%8A%82/</loc>
     <lastmod>2025-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -407,7 +400,7 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/tags/Anaconda/</loc>
+    <loc>https://hdsky.pw/tags/%E4%B8%8A%E7%BD%91/</loc>
     <lastmod>2025-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -415,6 +408,13 @@
   
   <url>
     <loc>https://hdsky.pw/tags/%E6%8A%80%E6%9C%AF%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/tags/Anaconda/</loc>
     <lastmod>2025-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -442,27 +442,20 @@
   </url>
   
   <url>
-    <loc>https://hdsky.pw/tags/Chatglm2/</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://hdsky.pw/tags/%E5%88%86%E4%BA%AB/</loc>
     <lastmod>2025-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>https://hdsky.pw/categories/Wordpress%E5%BB%BA%E7%AB%99/</loc>
+    <loc>https://hdsky.pw/tags/Chatglm2/</loc>
     <lastmod>2025-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
+  
+
   
   <url>
     <loc>https://hdsky.pw/categories/%E9%9A%8F%E4%BE%BF%E5%86%99%E7%9A%84%E4%B8%9C%E8%A5%BF/</loc>
@@ -472,7 +465,21 @@
   </url>
   
   <url>
+    <loc>https://hdsky.pw/categories/Wordpress%E5%BB%BA%E7%AB%99/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://hdsky.pw/categories/%E6%8A%80%E6%9C%AF%E6%94%B9%E5%8F%98%E7%94%9F%E6%B4%BB/</loc>
+    <lastmod>2025-10-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://hdsky.pw/categories/%E8%AF%84%E6%B5%8B/</loc>
     <lastmod>2025-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -487,13 +494,6 @@
   
   <url>
     <loc>https://hdsky.pw/categories/%E6%96%B0%E6%98%A5%E7%A5%9D%E7%A6%8F/</loc>
-    <lastmod>2025-10-19</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://hdsky.pw/categories/%E8%AF%84%E6%B5%8B/</loc>
     <lastmod>2025-10-19</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
